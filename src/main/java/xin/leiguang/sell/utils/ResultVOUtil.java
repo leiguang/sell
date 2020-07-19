@@ -1,5 +1,6 @@
 package xin.leiguang.sell.utils;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import xin.leiguang.sell.VO.ResultVO;
 
 public class ResultVOUtil {

@@ -3,6 +3,7 @@ package xin.leiguang.sell.service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import xin.leiguang.sell.dataobject.ProductInfo;
+import xin.leiguang.sell.dto.CartDTO;
 
 import java.util.List;
 
@@ -23,10 +24,10 @@ public interface ProductService {
     /**
      * 加库存
      */
-
+    void increaseStock(List<CartDTO> cartDTOList);
 
     /**
      * 减库存
      */
-
+    void decreaseStock(List<CartDTO> cartDTOList);
 }
