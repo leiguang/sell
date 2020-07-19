@@ -8,6 +8,11 @@ spring:
     show-sql: true
   jackson:
     default-property-inclusion: non_null # 全局设置不返回为 null 的字段
+  freemarker:
+    template-loader-path: classpath:/templates
+
+    suffix: .ftl
+
 
 server:
   servlet:
@@ -15,7 +20,11 @@ server:
 
 wechat:
   mpAppId: xxx
-  mpAppSecret: xxx
+    mpAppSecret: xxx
+    mchId: xxx
+    mchKey: xxx
+    keyPath: /var/weixin_cert/h5.p12
+    notifyUrl: http://vex4tt.natappfree.cc/sell/pay/notify
 
 #logging:
 #  pattern:

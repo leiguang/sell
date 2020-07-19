@@ -22,6 +22,7 @@ import xin.leiguang.sell.exception.SellException;
 import xin.leiguang.sell.repository.OrderDetailRepository;
 import xin.leiguang.sell.repository.OrderMasterRepository;
 import xin.leiguang.sell.service.OrderService;
+import xin.leiguang.sell.service.PayService;
 import xin.leiguang.sell.service.ProductService;
 import xin.leiguang.sell.utils.KeyUtil;
 
@@ -44,6 +45,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderMasterRepository orderMasterRepository;
+
+    @Autowired
+    private PayService payService;
 
     @Override
     @Transactional
@@ -152,8 +156,7 @@ public class OrderServiceImpl implements OrderService {
 
         // 如果已支付，需要退款
         if (orderDTO.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())) {
-            // TODO:
-
+            payService.refund(orderDTO);
         }
 
         return orderDTO;
