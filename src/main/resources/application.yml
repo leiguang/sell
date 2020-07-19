@@ -8,9 +8,14 @@ spring:
     show-sql: true
   jackson:
     default-property-inclusion: non_null # 全局设置不返回为 null 的字段
+
 server:
   servlet:
     context-path: /sell
+
+wechat:
+  mpAppId: xxx
+  mpAppSecret: xxx
 
 #logging:
 #  pattern:

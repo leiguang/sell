@@ -2,12 +2,14 @@ package xin.leiguang.sell.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import xin.leiguang.sell.dto.OrderDTO;
 import xin.leiguang.sell.enums.ResultEnum;
 import xin.leiguang.sell.exception.SellException;
 import xin.leiguang.sell.service.BuyerService;
 import xin.leiguang.sell.service.OrderService;
 
+@Service
 @Slf4j
 public class BuyerServiceImpl implements BuyerService {
 
