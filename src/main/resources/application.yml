@@ -19,12 +19,12 @@ server:
     context-path: /sell
 
 wechat:
-  mpAppId: xxx
-    mpAppSecret: xxx
-    mchId: xxx
-    mchKey: xxx
-    keyPath: /var/weixin_cert/h5.p12
-    notifyUrl: http://vex4tt.natappfree.cc/sell/pay/notify
+  mpAppId: wx5fa967d0c28bbbd6
+  mpAppSecret: 0a641c5bf1beff91fb591fe1a0e73e3c
+  mchId: 1483469312
+  mchKey: C5245D70627C1F8E9964D494B0735025
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://vex4tt.natappfree.cc/sell/pay/notify
 
 #logging:
 #  pattern:

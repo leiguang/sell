@@ -1,11 +1,13 @@
 package xin.leiguang.sell.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 import xin.leiguang.sell.dataobject.OrderDetail;
 import xin.leiguang.sell.enums.OrderStatusEnum;
 import xin.leiguang.sell.enums.PayStatusEnum;
+import xin.leiguang.sell.utils.EnumUtil;
 import xin.leiguang.sell.utils.serializer.Date2LongSerializer;
 
 import javax.persistence.Id;
@@ -72,4 +74,14 @@ public class OrderDTO {
     private Date updateTime;
 
     private List<OrderDetail> orderDetailList;
+
+    @JsonIgnore // 对象转成json格式时，就会忽略掉此方法
+    public OrderStatusEnum getOrderStatus() {
+        return EnumUtil.getByCode(orderStatus, OrderStatusEnum.class);
+    }
+
+    @JsonIgnore
+    public PayStatusEnum getPayStatusEnum() {
+        return EnumUtil.getByCode(payStatus, PayStatusEnum.class);
+    }
 }
